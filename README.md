@@ -1,7 +1,7 @@
 
 # WP Mode Paywall
 
-  
+  ![](https://i.ibb.co/gDvNB14/computer-Class.png)
 
 Mode Paywall is a simple WordPress plugin that securely hides your content behind a paywall, allowing access only after a successful made transaction on the Mode network is confirmed. This plugin its create unique way for help site owener monetize with [Mode rev share program](https://docs.mode.network/#the-onchain-cooperative).
 
