@@ -1,0 +1,50 @@
+=== Mode Paywall ===
+Contributors: 0xAirdropfarmer
+Tags: content, paywall, ethereum, blockchain, access, premium content
+Requires at least: 5.0
+Tested up to: 5.9
+Requires PHP: 7.2
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Mode Paywall is a WordPress plugin that securely hides content behind a paywall, only to be unlocked by a Mode network transaction.
+
+== Description ==
+
+Mode Paywall allows you to easily hide content on your WordPress site behind a paywall, which is only unlocked after a successful blockchain transaction via the Mode network. Using Ethereum blockchain technology, Mode Paywall ensures that only paying users can access your premium content.
+
+== Installation ==
+
+1. Upload the `mode-paywall` folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Use the 'Mode Paywall' settings page to configure the plugin.
+
+== Frequently Asked Questions ==
+
+= What is the Mode network? =
+
+The Mode network is a blockchain-based network that facilitates secure transactions and contracts.
+
+= How does the paywall know a transaction is successful? =
+
+The plugin listens for a confirmation of the transaction from the Ethereum blockchain before unlocking the content.
+
+= Is this plugin compatible with all themes? =
+
+Mode Paywall should be compatible with most themes, but proper functioning can only be guaranteed with themes that follow WordPress coding standards.
+
+== Screenshots ==
+
+1. The settings page where you can enter the contract address.
+2. The paywall in action, hiding premium content.
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release.
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release.

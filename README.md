@@ -37,6 +37,7 @@ Mode Paywall is a simple WordPress plugin that securely hides your content behin
 
 4. goto setting > Mode paywall > add your mode contract address (this tutorial how to deploy will found here )
 
+5. example contract code are [Here](https://gist.github.com/0xairdropfarmer/a2e200b270bd86259d472ea7a75eea52)
   
 
 ## Usage
