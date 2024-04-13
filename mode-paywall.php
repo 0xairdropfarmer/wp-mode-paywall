@@ -1,4 +1,5 @@
 <?php
+include plugin_dir_path(__FILE__) . 'admin/settings-page.php';
 /**
  * Plugin Name: Mode Paywall
  * Description: A simple Content paywall that hides content until a transaction from Mode network is confirmed.
@@ -14,15 +15,6 @@ add_action('init', 'myplugin_register_shortcodes');
 
 function myplugin_mode_paywall_shortcode($atts, $content = null)
 {
-    // Shortcode attributes can be used to customize the paywall, e.g., contract address
-    $atts = shortcode_atts(
-        [
-            'contract_address' => '0xEa9dD14e06E8b0FA8D6C0DC23821df290c8DF85d', // Default contract address
-            // ... other defaults can be set here
-        ],
-        $atts
-    );
-
     // Check if the user has already unlocked the content
     $has_access = false; // You'll need to implement this check based on your application's logic
 
@@ -41,22 +33,29 @@ function myplugin_mode_paywall_shortcode($atts, $content = null)
                 margin-top: 20px; /* Add some space on the top */
             }
             #unlockContentButton {
-                padding: 10px 20px;
-                background-color: #3498db; /* Example button color */
-                color: white;
-                border: none;
-                border-radius: 5px;
+                background-color: #d7ff00; /* Mode Network Green */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+                
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
             #unlockContentButton:hover {
-                background-color: #2980b9; /* Darker shade on hover */
+                background-color: #25fab0; /* Darker shade on hover */
             }
+            #unlockContentButton img {
+    margin-right: 5px;
+}
             #hiddenContent {
                 display: none;
             }
         </style>
         <div id="unlockContentButtonWrapper">
+  
             <button id="unlockContentButton"  >Unlock with Mode Network</button>
         </div>
         <div id="hiddenContent">
@@ -69,6 +68,8 @@ function myplugin_mode_paywall_shortcode($atts, $content = null)
 
 function mode_interaction()
 {
+    $contract_address = get_option('myplugin_contract_address');
+
     // First, enqueue web3.js from a CDN or your own hosted version
     wp_enqueue_script(
         'web3',
@@ -89,7 +90,7 @@ function mode_interaction()
 
     // Localize the script with data needed by the JS
     wp_localize_script('mode_interaction-js', 'myplugin_params', [
-        'contractAddress' => '0xEa9dD14e06E8b0FA8D6C0DC23821df290c8DF85d', // The smart contract address goes here
+        'contractAddress' => $contract_address, // The smart contract address goes here
         // ... other data ...
     ]);
 }
