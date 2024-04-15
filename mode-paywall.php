@@ -31,6 +31,7 @@ function myplugin_mode_paywall_shortcode($atts, $content = null)
                 display: flex;
                 justify-content: center; /* Center button horizontally */
                 margin-top: 20px; /* Add some space on the top */
+                
             }
             #unlockContentButton {
                 background-color: #d7ff00; /* Mode Network Green */
@@ -46,17 +47,34 @@ function myplugin_mode_paywall_shortcode($atts, $content = null)
             }
             #unlockContentButton:hover {
                 background-color: #25fab0; /* Darker shade on hover */
-            }
-            #unlockContentButton img {
-    margin-right: 5px;
-}
+            } 
             #hiddenContent {
                 display: none;
             }
+            .lock-icon {
+        /* position: absolute; Position the icons absolutely within the button */
+        height: 20px; /* Example size, adjust as needed */
+        width: 20px; /* Example size, adjust as needed */
+    } 
+            #warning_text {
+        display: block; /* This will make the text occupy its own line */
+        font-size: 15px; /* Corrected property from 'size' to 'font-size' */
+        text-align: center; /* Center the text horizontally */
+        margin-top: 10px; /* Adjust the space above the text */
+        color: yellowgreen;
+    }
         </style>
         <div id="unlockContentButtonWrapper">
-  
-            <button id="unlockContentButton"  >Unlock with Mode Network</button>
+        
+            <button id="unlockContentButton"  >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lock_font_awesome.svg/512px-Lock_font_awesome.svg.png" alt="Lock Icon" class="lock-icon left">    
+           <b>Unlock with Mode Network</b>
+         </button>
+           
+       
+        </div>
+        <div id="warningTextWrapper">
+            <b id="warning_text">this one time payment if your refresh or losing this session will need to unlock again</b>
         </div>
         <div id="hiddenContent">
             <?php echo do_shortcode($content); ?>
