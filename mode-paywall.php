@@ -87,7 +87,7 @@ function myplugin_mode_paywall_shortcode($atts, $content = null)
 function mode_interaction()
 {
     $contract_address = get_option('myplugin_contract_address');
-
+   wp_enqueue_script('jquery');
     // First, enqueue web3.js from a CDN or your own hosted version
     wp_enqueue_script(
         'web3',
